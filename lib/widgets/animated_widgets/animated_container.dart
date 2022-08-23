@@ -1,29 +1,46 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:implicit_animations_flutter/utils/constants.dart';
-import 'package:implicit_animations_flutter/utils/helper_widgets.dart';
+import '../../utils/helper_widgets.dart';
 
-class MyAnimatedOpacity extends StatefulWidget {
-  const MyAnimatedOpacity({Key? key}) : super(key: key);
+class MyAnimatedContainer extends StatefulWidget {
+  const MyAnimatedContainer({Key? key}) : super(key: key);
 
   @override
-  State<MyAnimatedOpacity> createState() => MyAnimatedOpacityState();
+  State<MyAnimatedContainer> createState() => MyAnimatedContainerState();
 }
 
-class MyAnimatedOpacityState extends State<MyAnimatedOpacity> {
+class MyAnimatedContainerState extends State<MyAnimatedContainer> {
+  Size size = const Size(200.0, 200.0);
+  Color color = Colors.green;
+  double radius = 0.0;
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(
-          width: 400.0,
-          height: 400.0,
-          child: Image.network(image),
+        AnimatedContainer(
+          duration: const Duration(seconds: 2),
+          width: size.width,
+          height: size.height,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(radius),
+            color: color,
+          ),
         ),
         addVerticalSpace(30.0),
-        buildButton(text: 'Show', onPressed: () {})
+        buildButton(
+            text: 'Show',
+            onPressed: () {
+              setState(() {
+                change();
+              });
+            })
       ],
     );
+  }
+
+  void change() {
+    color = Colors.red;
+    size = const Size(400.0, 400.0);
+    radius = 150.0;
   }
 }
