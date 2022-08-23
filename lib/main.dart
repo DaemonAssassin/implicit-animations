@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:implicit_animations_flutter/widgets/animated_widgets/animated_opacity.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -10,7 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        // home: MyAnimatedOpacity(),
-        );
+      home: Scaffold(
+        body: Center(
+          child: MyAnimatedOpacity(),
+        ),
+      ),
+    );
   }
 }
