@@ -9,20 +9,34 @@ class MyAnimatedRotation extends StatefulWidget {
 }
 
 class MyAnimatedRotationState extends State<MyAnimatedRotation> {
+  double _turns = 0.0;
+
+  void _changeRotation() {
+    setState(() => _turns += 20);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // AnimatedScale(
-
-        // ),
+        AnimatedRotation(
+          duration: const Duration(seconds: 2),
+          turns: _turns,
+          curve: Curves.easeInCirc,
+          child: Container(
+            color: Colors.red,
+            width: 100.0,
+            height: 100.0,
+          ),
+        ),
         addVerticalSpace(30.0),
         buildButton(
-            text: 'Show',
-            onPressed: () {
-              setState(() {});
-            })
+          text: 'Show',
+          onPressed: () {
+            _changeRotation();
+          },
+        ),
       ],
     );
   }
