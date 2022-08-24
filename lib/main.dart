@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:implicit_animations_flutter/widgets/animated_widgets/animated_rotation.dart';
+import 'package:implicit_animations_flutter/widgets/animated_widgets/animated_padding.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       home: Scaffold(
         body: Center(
-          child: MyAnimatedRotation(),
+          child: MyAnimatedPadding(),
         ),
       ),
     );
