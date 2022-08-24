@@ -9,18 +9,37 @@ class MyAnimatedScale extends StatefulWidget {
 }
 
 class MyAnimatedScaleState extends State<MyAnimatedScale> {
+  double _scale = 1.0;
+
+  changeScale() {
+    setState(() {
+      _scale = _scale == 1.0 ? 3.0 : 1.0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // AnimatedScale(),
+        AnimatedScale(
+          scale: _scale,
+          duration: const Duration(seconds: 1),
+          curve: Curves.bounceOut,
+          alignment: Alignment.center,
+          child: Container(
+            width: 100.0,
+            height: 100.0,
+            color: Colors.pink,
+          ),
+        ),
         addVerticalSpace(30.0),
         buildButton(
-            text: 'Show',
-            onPressed: () {
-              setState(() {});
-            })
+          text: 'Show',
+          onPressed: () {
+            changeScale();
+          },
+        ),
       ],
     );
   }
