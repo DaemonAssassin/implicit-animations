@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/helper_widgets.dart';
+import '../../../../utils/helper_widgets.dart';
 
 class MyAnimatedPhysicalModel extends StatefulWidget {
   const MyAnimatedPhysicalModel({Key? key}) : super(key: key);

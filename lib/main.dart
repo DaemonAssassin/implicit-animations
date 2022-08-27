@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:implicit_animations_flutter/animated_physical_mode.dart';
+import 'package:implicit_animations_flutter/widgets/animated_widgets/animated_positioned.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       home: Scaffold(
         body: Center(
-          child: MyAnimatedPhysicalModel(),
+          child: MyAnimatedPositioned(),
         ),
       ),
     );
