@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:implicit_animations_flutter/widgets/animated_widgets/animated_positioned.dart';
+import 'widgets/animated_widgets/animated_positioned.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
