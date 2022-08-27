@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:implicit_animations_flutter/widgets/animated_widgets/animated_switcher.dart';
+import 'package:implicit_animations_flutter/widgets/animated_widgets/animated_default_text_style.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       home: Scaffold(
         body: Center(
-          child: MyAnimatedSwitcher(),
+          child: MyAnimatedDefaultTextStyle(),
         ),
       ),
     );
